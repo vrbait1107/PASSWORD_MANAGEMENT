@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <main class="container">
+        <h3 class="text-center text-uppercase font-weight-bold mb-5" style="font-family: sans-serif"><%= title %></h3>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card shadow p-3">
+
+                    <div class="card-header">
+                        Register Here
+                    </div>
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" class="form-control"
+                                placeholder="Enter Your Username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="Enter Your Email">
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                placeholder="Enter Your Password">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control"
+                                placeholder="Confirm Your Password">
+                        </div>
+
+                        <button class="btn btn-primary mt-4 rounded-pill btn-block">Register</button>
+                    </div>
+
+                    <p class="font-weight-bold">Have an Account? <a href="/">Login Here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer Script -->
+    <%- include("../includes/footerScripts.ejs") %>
+</body>
+
+</html>
