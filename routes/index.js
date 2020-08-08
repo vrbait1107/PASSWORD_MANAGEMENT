@@ -93,24 +93,4 @@ router.get("/dashboard", (req, res, next) => {
   res.render("dashboard", { title: "Password Details" });
 });
 
-// -------------------->> GET VIEW ALL CATEGORY
-router.get("/passwordCategory", (req, res, next) => {
-  res.render("passwordCategory", { title: "Password Details" });
-});
-
-// -------------------->> GET ADD NEW CATEGORY
-router.get("/addNewCategory", (req, res, next) => {
-  res.render("addNewCategory", { title: "Password Management Details" });
-});
-
-// -------------------->> GET ADD NEW PASSWORD
-router.get("/addNewPassword", (req, res, next) => {
-  res.render("addNewPassword", { title: "Password Management Details" });
-});
-
-// -------------------->> GET VIEW ALL PASSWORD
-router.get("/viewAllPassword", (req, res, next) => {
-  res.render("viewAllPassword", { title: "Password Management Details" });
-});
-
 module.exports = router;
