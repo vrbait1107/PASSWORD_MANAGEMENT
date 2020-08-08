@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const conn = mongoose.connect("mongodb://localhost:27017/PasswordDB", {
   useNewUrlParser: true,
   useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 
 var indexRouter = require("./routes/index");

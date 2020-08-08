@@ -6,3 +6,8 @@ a {
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
 }
+
+.register-form {
+  min-height: 100vh;
+  align-items: center;
+}
