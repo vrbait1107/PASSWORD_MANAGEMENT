@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 const User = require("../model/Register");
 const bcrypt = require("bcryptjs");
+const PasswordDetails = require("../model/PasswordDetails");
 
 // -------------------->>  MIDDLEWARE CHECK EMAIL
 function checkEmail(req, res, next) {
@@ -64,6 +65,22 @@ router.post("/", function (req, res, next) {
         });
       }
     }
+  });
+});
+
+// ------------------------>> Add Password Details to Database.
+
+router.post("/addPasswordDetails", function (req, res, next) {
+  let categoryName = req.body.categoryName;
+  let passwordDetails = req.body.passwordDetails;
+
+  let passwordDetailsModel = new PasswordDetails();
+  passwordDetailsModel.categoryName = categoryName;
+  passwordDetailsModel.passwordDetails = passwordDetails;
+
+  passwordDetailsModel.save(function (err, data) {
+    if (err) throw err;
+    res.send("Data Successfully Inserted");
   });
 });
 
