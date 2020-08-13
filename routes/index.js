@@ -84,6 +84,15 @@ router.post("/addPasswordDetails", function (req, res, next) {
   });
 });
 
+// ------------------------>> Add Password Details to Database.
+
+router.post("/readPasswordDetails", function (req, res, next) {
+  PasswordDetails.find({}, function (err, data) {
+    if (err) throw err;
+    res.send(data);
+  });
+});
+
 // -------------------->> GET REGISTER
 router.get("/register", (req, res, next) => {
   res.render("register", { title: "Password Management System", msg: "" });
