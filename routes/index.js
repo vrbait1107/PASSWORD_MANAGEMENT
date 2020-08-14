@@ -106,13 +106,18 @@ router.post("/editPasswordDetails", function (req, res, next) {
 //------------------------------->> UPDATE OPERATION
 router.post("/updatePasswordDetails", function (req, res, next) {
   let updateId = req.body.updateId;
+  let updateCategoryName = req.body.updateCategoryName;
+  let updatePasswordDetailsValue = req.body.updatePasswordDetailsValue;
 
   PasswordDetails.findByIdAndUpdate(
     updateId,
-    { updateCaregoryName, updatePasswordDetails },
+    {
+      categoryName: updateCategoryName,
+      passwordDetails: updatePasswordDetailsValue,
+    },
     function (err, data) {
       if (err) throw err;
-      res.send(data);
+      res.send("Data Successfully Updated");
     }
   );
 });

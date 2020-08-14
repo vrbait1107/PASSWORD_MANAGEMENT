@@ -71,6 +71,10 @@ $(document).ready(function () {
     let updateCategoryName = $("#updateCategoryName").val();
     let updatePasswordDetailsValue = CKEDITOR.instances.updatePasswordDetails.getData();
 
+    console.log(updateId);
+    console.log(updateCategoryName);
+    console.log(updatePasswordDetailsValue);
+
     $.ajax({
       url: "/updatePasswordDetails",
       type: "post",
@@ -127,7 +131,8 @@ const viewPasswordDetails = (id) => {
       viewId: viewId,
     },
     success(data) {
-      $("#viewDetails").html(data);
+      $("#viewDetails1").html(data.categoryName);
+      $("#viewDetails2").html(data.passwordDetails);
     },
     error() {
       alert("Something Went Wrong");
