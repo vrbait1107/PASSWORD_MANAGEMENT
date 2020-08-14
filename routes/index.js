@@ -68,7 +68,7 @@ router.post("/", function (req, res, next) {
   });
 });
 
-// ------------------------>> Add Password Details to Database.
+// ------------------------>> CREATE OPERATION
 
 router.post("/addPasswordDetails", function (req, res, next) {
   let categoryName = req.body.categoryName;
@@ -84,12 +84,57 @@ router.post("/addPasswordDetails", function (req, res, next) {
   });
 });
 
-// ------------------------>> Add Password Details to Database.
+// ------------------------>> READ OPERATION
 
 router.post("/readPasswordDetails", function (req, res, next) {
   PasswordDetails.find({}, function (err, data) {
     if (err) throw err;
     res.send(data);
+  });
+});
+
+//------------------------------->> EDIT OPERATION
+router.post("/editPasswordDetails", function (req, res, next) {
+  let editId = req.body.editId;
+
+  PasswordDetails.findById(editId, function (err, data) {
+    if (err) throw err;
+    res.send(data);
+  });
+});
+
+//------------------------------->> UPDATE OPERATION
+router.post("/updatePasswordDetails", function (req, res, next) {
+  let updateId = req.body.updateId;
+
+  PasswordDetails.findByIdAndUpdate(
+    updateId,
+    { updateCaregoryName, updatePasswordDetails },
+    function (err, data) {
+      if (err) throw err;
+      res.send(data);
+    }
+  );
+});
+
+//------------------------------->> VIEW OPERATION
+router.post("/viewPasswordDetails", function (req, res, next) {
+  let viewId = req.body.viewId;
+
+  PasswordDetails.findById(viewId, function (err, data) {
+    if (err) throw err;
+    res.send(data);
+  });
+});
+
+// ------------------------>> DELETE OPERATION
+
+router.post("/deletePasswordDetails", function (req, res, next) {
+  let deleteId = req.body.deleteId;
+
+  PasswordDetails.findByIdAndDelete(deleteId, function (err, data) {
+    if (err) throw err;
+    res.send("Data Successfully Deleted");
   });
 });
 
